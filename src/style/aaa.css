@@ -1,0 +1,7 @@
+import './bbb.less';
+body,html{
+    background-color: red;
+}
+.main {
+    display: flex;
+}
