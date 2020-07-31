@@ -1,4 +1,4 @@
-import './bbb.less';
+@import './bbb.less';
 body,html{
     background-color: red;
 }

@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: "./js/[name]-[hash].js"
+        filename: "./js/[name].js" // [name]-[hash]
     },
     module: {
         rules: [
@@ -14,29 +14,16 @@ module.exports = {
                 use: 'babel-loader'
             },
             {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader?importLoaders=1',
-                    'postcss-loader',
-                ]
-            },
-            {
-                test: /\.less$/,
+                test: /\.(css|less)$/,
                 use: [
                     'style-loader',
                     'css-loader',
                     'postcss-loader',
-                    'less-loader',
+                    'less-loader'
                 ]
             }
         ]
     },
-    // postcss: [
-    //     require('autoprefixer')({
-    //         browsers: ['last 5 versions']
-    //     })
-    // ],
     plugins: [
         new htmlWebpackPlugin({
             template: "index.html"
